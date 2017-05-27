@@ -1,0 +1,93 @@
+body {  padding: 0;  margin: 0;  }
+
+html { box-sizing: border-box; }
+
+.page-header {
+    color: rgb(0,188,212);
+    background-color: rgb(34, 34, 34);
+    width: 100%;
+}
+
+.page-content {
+    width: 992px;
+    margin: 0 auto;
+}
+
+.search {
+    border: solid 5px #eee;
+    padding: 10px;
+    margin: 100px;
+}
+
+    .search__input {
+        color: #ccc;
+        width: 100%;
+        font-size: 18px;
+        line-height: 2;
+        border: none;
+    }
+
+.flex {
+    display: flex;
+}
+
+.page-header__logo--img {
+    height: 60px;
+}
+
+.page-header__slogan--text {
+    color: #f2f2f2;
+    font-family: Arial, serif;
+    font-size: 25px;
+    margin: 10px;
+    line-height: 2.5;
+}
+
+.results {
+    justify-content: center;
+    align-items: center;
+}
+
+    .results__github {
+        width: 100%;
+        margin: 0 20px;
+    }
+        .results__github--header {
+            font-size: 30px;
+            padding: 50px 0;
+            background-color: deepskyblue;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+.box-shadow {
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+.repo {
+    display: block;
+    padding: 20px;
+    margin: 10px 0;
+    border: 3px solid #eeeeee;
+}
+    .repo__name {
+        color: #333;
+        font-family: Arial, serif;
+        font-size: 20px;
+        text-decoration: none;
+        display: block;
+    }
+    .repo__user {
+        color: #333;
+        font-size: 14px;
+    }
+    .repo__user--link {
+        color: #555555;
+        text-decoration: none;
+    }
+    .repo__stars {
+        font-size: 14px;
+        color: #555;
+    }
