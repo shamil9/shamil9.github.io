@@ -1,0 +1,27 @@
+{
+  "name": "shamil",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sw.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "normalize.css": "^7.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shamil9/shamil9.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shamil9/shamil9.github.io/issues"
+  },
+  "homepage": "https://github.com/shamil9/shamil9.github.io#readme"
+}

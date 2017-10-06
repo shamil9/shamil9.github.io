@@ -1,0 +1,99 @@
+@import "../../node_modules/normalize.css/normalize.css";
+
+$fancy-font: "Poiret One", cursive;
+$font-size: 16px;
+
+@function getRem($size) {
+  @return #{($size / 16)}rem;
+}
+
+html,
+body {
+  font-family: Courier New, Courier, monospace;
+  font-size: $font-size;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+.container {
+  width: 1000px;
+  margin: 0 50px;
+}
+
+.name {
+  width: 500px;
+  h1 {
+    font-family: $fancy-font;
+    font-size: getRem(72);
+    font-weight: normal;
+    margin-bottom: 20px;
+  }
+  h2 {
+    font-weight: normal;
+  }
+}
+
+nav {
+  flex: 1;
+  ul {
+    list-style-type: none;
+    justify-content: flex-end;
+
+    li {
+      margin-left: 32px;
+    }
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-middle {
+  align-items: center;
+}
+
+main {
+  justify-content: center;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  line-height: 0;
+  z-index: -99999;
+}
+
+.siema {
+  width: 330px;
+  overflow: hidden;
+}
+
+.slider {
+  float: right;
+  & > p {
+    text-align: center;
+  }
+}
+
+.circle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+
+  background-color: rgba(0, 0, 0, 0.1);
+  background-image: url("/assets/img/icons/arrow.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.rotated {
+  transform: rotate(180deg);
+}
