@@ -3,14 +3,34 @@
 $fancy-font: "Poiret One", cursive;
 $font-size: 16px;
 
+$breakpoints: ("small": 767px, "medium": 992px, "large": 1200px) !default;
+
 @function getRem($size) {
   @return #{($size / 16)}rem;
+}
+
+@mixin respond-to($breakpoint, $orientation: null) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @if ($orientation) {
+      @media (max-width: map-get($breakpoints, $breakpoint)) and (orientation: #{$orientation}) {
+        @content;
+      }
+    } @else {
+      @media (max-width: map-get($breakpoints, $breakpoint)) {
+        @content;
+      }
+    }
+  } @else {
+    @warn "Unfortunately,
+      no value could be retrieved from `#{$breakpoint}`. " + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
 }
 
 html,
 body {
   font-family: Courier New, Courier, monospace;
   font-size: $font-size;
+  box-sizing: border-box;
 }
 
 input:focus,
@@ -21,20 +41,42 @@ button:focus {
 }
 
 .container {
-  width: 1000px;
-  margin: 0 50px;
+  max-width: 1000px;
+  width: 100%;
+  margin: 0;
+}
+
+header {
+  margin: 50px;
+  @include respond-to("small") {
+    margin: 0 20px;
+    flex-direction: column-reverse;
+  }
 }
 
 .name {
   width: 500px;
+
+  @include respond-to(small) {
+    width: 300px;
+  }
+
   h1 {
     font-family: $fancy-font;
     font-size: getRem(72);
     font-weight: normal;
     margin-bottom: 20px;
+
+    @include respond-to(small) {
+      font-size: getRem(50);
+    }
   }
   h2 {
     font-weight: normal;
+
+    @include respond-to(small) {
+      font-size: getRem(18);
+    }
   }
 }
 
@@ -59,7 +101,14 @@ nav {
 }
 
 main {
+  flex-direction: column;
+  align-items: flex-end;
   justify-content: center;
+  margin: 0 50px;
+
+  @include respond-to("small") {
+    margin: 0 20px;
+  }
 }
 
 footer {
@@ -70,9 +119,27 @@ footer {
   z-index: -99999;
 }
 
+.footer-triangle {
+  width: 100%;
+  height: 100%;
+
+  @include respond-to("small", "landscape") {
+    width: 65%;
+    height: 65%;
+  }
+}
+
 .siema {
-  width: 330px;
   overflow: hidden;
+  width: 330px;
+
+  @include respond-to("small") {
+    width: 200px;
+  }
+
+  & img {
+    width: 100%;
+  }
 }
 
 .slider {
